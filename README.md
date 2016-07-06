@@ -1,2 +1,14 @@
-# olist
-Linked list manager. Make it easy!
+# olist - A linked list manager
+   Make it easy!
+
+# Use
+
+Create a new linked list manager with "new_list_manager("name")"
+You can now add lists to the list_manager "name", with "new_list(list_manager, "list_name")".
+You can now add elements to the list "list_name" with add_to_list(elem, list)
+
+The reason you have lists_manager is that you can more easily free your lists with functions such as
+- delete_all_lists(list_manager)
+- delete_list(list)
+
+Also elems are simple : they use void * pointers to allow for flexibility. Simply create your own type of data and you can use olist.
