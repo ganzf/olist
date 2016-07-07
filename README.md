@@ -11,4 +11,4 @@ The reason you have lists_manager is that you can more easily free your lists wi
 - delete_all_lists(list_manager)
 - delete_list(list)
 
-Also elems are simple : they use void * pointers to allow for flexibility. Simply create your own type of data and you can use olist.
+Also elems are simple : they use void * pointers to create flexibility. Simply create your own type of data and you can use olist. (For example, make a simple post_it structure, like I did!)
