@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 16:29:26 2016 Felix Ganz
-** Last update Thu Jul  7 10:11:12 2016 Felix Ganz
+** Last update Thu Jul  7 11:53:54 2016 Felix Ganz
 */
 
 #include <stdbool.h>
@@ -35,7 +35,7 @@ t_elem		*test_elem_creation(t_list *list)
   t_elem	*elem2;
   t_post_it	*new2;
 
-  printf("\t["T_G"Test"T_END"] Elem creation.\n");
+  printf("\n\t["T_G"Test"T_END"] Elem creation.\n");
   if ((new = create_post_it("Courses",
 			    "Il faudrait acheter a manger!!",
 			    T_R)) == NULL)
@@ -54,9 +54,7 @@ t_elem		*test_elem_creation(t_list *list)
       printf("[ "T_R"KO"T_END" ]\tElem creation failed.\n");
       return (NULL);
     }
-  print_list_info(list);
   printf("[ "T_G"OK"T_END" ]\tElem creation successful.\n");
-  print_manager_info(list->manager);
   return (elem);
 }
 
@@ -65,17 +63,14 @@ t_list		*test_list_creation(t_list_manager *manager)
   t_list	*list;
   t_list	*list2;
 
-  printf("\t["T_G"Test"T_END"] List creation.\n");
+  printf("\n\t["T_G"Test"T_END"] List creation.\n");
   if ((list = create_list("First list", manager, false)) == NULL
       || (list2 = create_list("Second list", manager, true)) == NULL)
     {
       printf("[ "T_R"KO"T_END" ]\tList creation failed.\n");
       return (NULL);
     }
-  print_list_info(list);
-  print_list_info(list2);
   printf("[ "T_G"OK"T_END" ]\tList creation successful.\n");
-  print_manager_info(manager);
   return (list);
 }
 
@@ -84,7 +79,7 @@ t_list_manager		*test_manager_creation()
   char			*name;
   t_list_manager	*manager;
 
-  printf("\t["T_G"Test"T_END"] Manager creation.\n");
+  printf("\n\t["T_G"Test"T_END"] Manager creation.\n");
   if ((name = strdup("First manager")) == NULL
       || (manager = create_list_manager(name, 5)) == NULL)
     {
@@ -92,7 +87,6 @@ t_list_manager		*test_manager_creation()
       return (NULL);
     }
   free(name);
-  print_manager_info(manager);
   printf("[ "T_G"OK"T_END" ]\tManager creation successful.\n");
   return (manager);
 }
@@ -106,5 +100,6 @@ int			main(void)
       || (list = test_list_creation(manager)) == NULL
       || (test_elem_creation(list)) == NULL)
     return (EXIT_FAILURE);
+  print_manager_info(manager);
   return (EXIT_SUCCESS);
 }

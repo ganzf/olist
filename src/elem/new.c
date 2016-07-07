@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Thu Jul  7 09:17:52 2016 Felix Ganz
-** Last update Thu Jul  7 10:09:27 2016 Felix Ganz
+** Last update Thu Jul  7 11:24:20 2016 Felix Ganz
 */
 
 #include <stdlib.h>
@@ -44,5 +44,6 @@ t_elem		*add_elem_to_list(t_list *list, void *data)
       new->prev = last;
     }
   id += 1;
+  list->size += 1;
   return (new);
 }

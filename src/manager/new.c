@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 17:25:24 2016 Felix Ganz
-** Last update Thu Jul  7 09:33:40 2016 Felix Ganz
+** Last update Thu Jul  7 11:38:44 2016 Felix Ganz
 */
 
 #include <stdbool.h>

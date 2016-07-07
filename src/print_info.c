@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 17:32:58 2016 Felix Ganz
-** Last update Thu Jul  7 10:18:18 2016 Felix Ganz
+** Last update Thu Jul  7 12:20:30 2016 Felix Ganz
 */
 
 #include <stdbool.h>
@@ -15,7 +15,6 @@
 void	print_post_it(t_post_it *post_it)
 {
   printf("%s|-------------------------|"T_END"\n", post_it->color);
-  printf("Addr : %p\n", post_it);
   printf("Title:\t%s%s"T_END"\n", post_it->color, post_it->title);
   printf("Desc:\t%s\n", post_it->description);
   printf("%s|_________________________|"T_END"\n", post_it->color);
@@ -26,18 +25,20 @@ void	print_elem_info(t_elem *elem)
   print_post_it((t_post_it *)elem->data);
   printf("Id :\t%i\n", elem->id);
   printf("L.U :\t%s\n", ctime(&elem->created_at));
-  printf("Addr :\t%p\n", elem->data);
 }
 
 void	print_elems_info(t_list *list)
 {
   t_elem *tmp;
 
-  tmp = list->elems;
-  while (tmp != NULL)
+  if (list->size > 0)
     {
-      print_elem_info(tmp);
-      tmp = tmp->next;
+      tmp = list->elems;
+      while (tmp != NULL)
+	{
+	  print_elem_info(tmp);
+	  tmp = tmp->next;
+	}
     }
 }
 
@@ -49,8 +50,9 @@ void	print_managed_lists(const t_list_manager *manager)
   printf(T_G"%s"T_END"\'s managed lists :\n", manager->name);
   while (manager->managed_lists[idx] != NULL)
     {
-      printf("-\t-\t[ "T_B"%i"T_END" ] %s\n",
-	     idx, manager->managed_lists[idx]->name);
+      printf("-\t-\t[ "T_B"%i"T_END" ] "T_G"%s (%i elems)"T_END"\n",
+	     idx, manager->managed_lists[idx]->name,
+	     manager->managed_lists[idx]->size);
       print_elems_info(manager->managed_lists[idx]);
       idx += 1;
     }
@@ -60,7 +62,8 @@ void	print_managed_lists(const t_list_manager *manager)
 
 void	print_manager_info(const t_list_manager *manager)
 {
-  printf("Name:\t%s\n", manager->name);
+  printf("\n[__MANAGER_INFO__]\n");
+  printf("Name:\t"T_G"%s"T_END"\n", manager->name);
   printf("Id :\t%i\n", manager->id);
   printf("L.U :\t%s\n", ctime(&manager->created_at));
   printf("Size :\t%i\n", manager->size);
@@ -69,7 +72,8 @@ void	print_manager_info(const t_list_manager *manager)
 
 void	print_list_info(const t_list *list)
 {
-  printf("Name:\t%s\n", list->name);
+  printf("\n[__LIST_INFO__]\n");
+  printf("Name:\t"T_G"%s"T_END"\n", list->name);
   printf("Id :\t%i\n", list->id);
   printf("L.U :\t%s\n", ctime(&list->created_at));
   printf("Size :\t%i\n", list->size);
