@@ -5,14 +5,21 @@
 ## Login   <ganz_f@epitech.net>
 ##
 ## Started on  Wed Jun  1 20:56:50 2016 Felix Ganz
-## Last update Wed Jul  6 16:21:06 2016 Felix Ganz
+## Last update Wed Jul  6 19:08:45 2016 Felix Ganz
 ##
 
 NAME		=	olist
 
-MAIN		=	src/main.c
+MAIN		=	src/main.c \
+			src/print_info.c
+
+SRC_MANAGER	=	src/manager/new.c
+
+SRC_LIST	=	src/list/new.c
 
 SRC	=	$(MAIN) \
+		$(SRC_MANAGER) \
+		$(SRC_LIST)
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -30,7 +37,7 @@ clean	:
 		@$(RM) $(OBJ)
 		@printf "[ \033[32mOK\033[0m ]\tReposiroty cleaned.\n"
 
-fclean	:
+fclean	:	clean
 		@$(RM) $(NAME)
 		@printf "[ \033[32mOK\033[0m ]\tRepository fcleaned.\n"
 
