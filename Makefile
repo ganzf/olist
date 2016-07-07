@@ -5,7 +5,7 @@
 ## Login   <ganz_f@epitech.net>
 ##
 ## Started on  Wed Jun  1 20:56:50 2016 Felix Ganz
-## Last update Wed Jul  6 19:08:45 2016 Felix Ganz
+## Last update Thu Jul  7 09:44:37 2016 Felix Ganz
 ##
 
 NAME		=	olist
@@ -17,9 +17,12 @@ SRC_MANAGER	=	src/manager/new.c
 
 SRC_LIST	=	src/list/new.c
 
+SRC_ELEM	=	src/elem/new.c
+
 SRC	=	$(MAIN) \
 		$(SRC_MANAGER) \
-		$(SRC_LIST)
+		$(SRC_LIST) \
+		$(SRC_ELEM)
 
 OBJ	=	$(SRC:.c=.o)
 

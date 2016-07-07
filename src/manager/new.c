@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 17:25:24 2016 Felix Ganz
-** Last update Thu Jul  7 08:36:17 2016 Felix Ganz
+** Last update Thu Jul  7 09:33:40 2016 Felix Ganz
 */
 
 #include <stdbool.h>
@@ -70,5 +70,6 @@ t_list_manager		*create_list_manager(char *name,
     return (NULL);
   nullset(managed_lists, size + 1);
   new->managed_lists = managed_lists;
+  id += 1;
   return (new);
 }
