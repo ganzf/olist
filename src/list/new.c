@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 ** 
 ** Started on  Wed Jul  6 17:51:43 2016 Felix Ganz
-** Last update Thu Jul  7 08:37:30 2016 Felix Ganz
+** Last update Thu Jul  7 08:51:18 2016 Felix Ganz
 */
 
 #include <stdlib.h>
@@ -13,7 +13,8 @@
 #include "olist.h"
 
 t_list		*create_list(const char *name,
-			     t_list_manager *manager)
+			     t_list_manager *manager,
+			     int circular)
 {
   static int	id = 0;
   t_list	*new;
@@ -23,6 +24,8 @@ t_list		*create_list(const char *name,
   new->id = id;
   new->size = 0;
   new->created_at = time(NULL);
+  new->manager = manager;
+  new->circular = circular;
   if ((new->name = strdup(name)) == NULL)
     {
       free(new);

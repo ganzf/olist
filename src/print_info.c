@@ -5,9 +5,10 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 17:32:58 2016 Felix Ganz
-** Last update Thu Jul  7 08:39:29 2016 Felix Ganz
+** Last update Thu Jul  7 08:53:04 2016 Felix Ganz
 */
 
+#include <stdbool.h>
 #include <stdio.h>
 #include "olist.h"
 
@@ -42,4 +43,5 @@ void	print_list_info(const t_list *list)
   printf("Id :\t%i\n", list->id);
   printf("L.U :\t%i\n", (int)list->created_at);
   printf("Size :\t%i\n", list->size);
+  printf("Circ :\t%s\n", list->circular == false ? T_R"false"T_END : T_G"true"T_END);
 }
