@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 ** 
 ** Started on  Wed Jul  6 17:51:43 2016 Felix Ganz
-** Last update Thu Jul  7 08:51:18 2016 Felix Ganz
+** Last update Thu Jul  7 09:33:51 2016 Felix Ganz
 */
 
 #include <stdlib.h>
@@ -26,11 +26,13 @@ t_list		*create_list(const char *name,
   new->created_at = time(NULL);
   new->manager = manager;
   new->circular = circular;
+  new->elems = NULL;
   if ((new->name = strdup(name)) == NULL)
     {
       free(new);
       return (NULL);
     }
   add_list_to_manager(manager, new);
+  id += 1;
   return (new);
 }
