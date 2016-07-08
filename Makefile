@@ -5,7 +5,7 @@
 ## Login   <ganz_f@epitech.net>
 ##
 ## Started on  Wed Jun  1 20:56:50 2016 Felix Ganz
-## Last update Fri Jul  8 18:46:51 2016 Felix Ganz
+## Last update Fri Jul  8 18:51:43 2016 Felix Ganz
 ##
 
 LIBNAME		=	liblist.a
@@ -58,7 +58,7 @@ clean	:
 		@printf "[ \033[32mOK\033[0m ]\tReposiroty cleaned.\n"
 
 fclean	:	clean
-		@$(RM) $(NAME)
+		@$(RM) $(LIBNAME)
 		@printf "[ \033[32mOK\033[0m ]\tRepository fcleaned.\n"
 
 re	:	fclean all
