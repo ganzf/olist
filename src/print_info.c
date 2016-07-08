@@ -5,11 +5,13 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 17:32:58 2016 Felix Ganz
-** Last update Thu Jul  7 12:20:30 2016 Felix Ganz
+** Last update Fri Jul  8 19:13:31 2016 Felix Ganz
 */
 
 #include <stdbool.h>
 #include <stdio.h>
+#include "color.h"
+#include "unit_test.h"
 #include "olist.h"
 
 void	print_post_it(t_post_it *post_it)

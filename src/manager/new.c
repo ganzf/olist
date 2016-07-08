@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 17:25:24 2016 Felix Ganz
-** Last update Thu Jul  7 11:38:44 2016 Felix Ganz
+** Last update Fri Jul  8 19:28:04 2016 Felix Ganz
 */
 
 #include <stdbool.h>
@@ -14,30 +14,9 @@
 #include <string.h>
 #include "olist.h"
 
-int			add_list_to_manager(t_list_manager *manager,
-					    t_list *list)
+static void	nullset(t_list **managed_list, int size)
 {
-  int			idx;
-
-  idx = 0;
-  while (manager->managed_lists[idx] != NULL
-	 && idx < manager->size)
-    idx += 1;
-  if (idx == manager->size)
-    {
-      fprintf(stderr, T_R"add_list_to_manager:"
-	      T_END"\tManager "T_B"%s"
-	      T_END" is full. Could not add "T_B"%s"
-	      T_END" list.\n", manager->name, list->name);
-      return (false);
-    }
-  manager->managed_lists[idx] = list;
-  return (true);
-}
-
-static void		nullset(t_list **managed_list, int size)
-{
-  int			idx;
+  int		idx;
 
   idx = 0;
   while (idx < size)

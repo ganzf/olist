@@ -5,12 +5,27 @@
 ** Login   <ganz_f@ganz-f-pc>
 ** 
 ** Started on  Wed Jul  6 17:51:43 2016 Felix Ganz
-** Last update Thu Jul  7 09:33:51 2016 Felix Ganz
+** Last update Fri Jul  8 19:28:00 2016 Felix Ganz
 */
 
 #include <stdlib.h>
 #include <string.h>
 #include "olist.h"
+
+static int	add_list_to_manager(t_list_manager *manager,
+				    t_list *list)
+{
+  int		idx;
+
+  idx = 0;
+  while (manager->managed_lists[idx] != NULL
+	 && idx < manager->size)
+    idx += 1;
+  if (idx == manager->size)
+    return (false);
+  manager->managed_lists[idx] = list;
+  return (true);
+}
 
 t_list		*create_list(const char *name,
 			     t_list_manager *manager,

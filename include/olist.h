@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 16:31:53 2016 Felix Ganz
-** Last update Fri Jul  8 18:48:21 2016 Felix Ganz
+** Last update Fri Jul  8 19:28:53 2016 Felix Ganz
 */
 
 #ifndef OLIST_H_
@@ -14,14 +14,6 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <time.h>
-# include "color.h"
-
-typedef struct		s_post_it
-{
-  char			*title;
-  char			*description;
-  char			*color;
-}			t_post_it;
 
 typedef struct		s_elem
 {
@@ -54,10 +46,7 @@ typedef struct		s_list_manager
 }			t_list_manager;
 
 t_list_manager		*create_list_manager(char *name, int size);
-void			print_manager_info(const t_list_manager *manager);
 t_list			*create_list(const char *name, t_list_manager *manager, int circular);
-void			print_list_info(const t_list *list);
-int			add_list_to_manager(t_list_manager *manager, t_list *list);
 t_elem			*add_elem_to_list(t_list *list, void *data);
 
 #endif /* !OLIST_H_ */

@@ -5,7 +5,7 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 16:29:26 2016 Felix Ganz
-** Last update Thu Jul  7 11:53:54 2016 Felix Ganz
+** Last update Fri Jul  8 19:13:34 2016 Felix Ganz
 */
 
 #include <stdbool.h>
@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "olist.h"
+#include "unit_test.h"
+#include "color.h"
 
 static t_post_it	*create_post_it(char *title,
 					char *description,
