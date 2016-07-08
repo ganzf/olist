@@ -5,10 +5,18 @@
 ## Login   <ganz_f@epitech.net>
 ##
 ## Started on  Wed Jun  1 20:56:50 2016 Felix Ganz
-## Last update Thu Jul  7 19:51:50 2016 Felix Ganz
+## Last update Fri Jul  8 18:46:51 2016 Felix Ganz
 ##
 
-NAME		=	liblist.a
+LIBNAME		=	liblist.a
+
+TEST		=	test
+
+TEST_CLEAN	=	test_c
+
+TEST_FCLEAN	=	test_f
+
+TEST_RE		=	test_r
 
 SRC_MANAGER	=	src/manager/new.c
 
@@ -26,11 +34,24 @@ CC	=	gcc -W -Wall -Iinclude -O2
 
 RM	=	rm -f
 
-all	:	$(NAME)
+all	:	$(LIBNAME) $(TEST)
 
-$(NAME)	:	$(OBJ)
-		ar rc $(NAME) $(OBJ)
-		@printf "[ \033[32mOK\033[0m ]\Library ready.\n"
+$(LIBNAME)	:	$(OBJ)
+			ar rc $(LIBNAME) $(OBJ)
+			@printf "[ \033[32mOK\033[0m ]\Library ready.\n"
+
+$(TEST)	:
+			make -C unit_test all
+
+$(TEST_CLEAN)	:
+			make -C unit_test clean
+
+
+$(TEST_FCLEAN)	:
+			make -C unit_test fclean
+
+$(TEST_RE)	:
+			make -C unit_test re
 
 clean	:
 		@$(RM) $(OBJ)

@@ -5,12 +5,14 @@
 ** Login   <ganz_f@ganz-f-pc>
 **
 ** Started on  Wed Jul  6 16:31:53 2016 Felix Ganz
-** Last update Thu Jul  7 09:43:30 2016 Felix Ganz
+** Last update Fri Jul  8 18:48:21 2016 Felix Ganz
 */
 
 #ifndef OLIST_H_
 # define OLIST_H_
 
+# include <stdlib.h>
+# include <stdbool.h>
 # include <time.h>
 # include "color.h"
 

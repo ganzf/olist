@@ -12,3 +12,8 @@ The reason you have lists_manager is that you can more easily free your lists wi
 - delete_list(list)
 
 Also elems are simple : they use void * pointers to create flexibility. Simply create your own type of data and you can use olist. (For example, make a simple post_it structure, like I did!)
+
+# Repository
+
+Use make to build the library and the unit test program.
+Use make test_c, test_f, test_r... to control unit tests program.
